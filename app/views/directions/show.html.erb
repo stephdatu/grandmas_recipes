@@ -1,4 +1,5 @@
 <div id='direction'>
   <h2><%= @direction.step_number %></h2>
   <%= simple_format(@direction.description) %>
+  <%= link_to "Edit Direction", [:edit, @recipe, @direction] %>
 </div>

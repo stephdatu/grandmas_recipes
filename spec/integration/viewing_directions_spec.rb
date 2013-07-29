@@ -17,12 +17,11 @@ feature "Viewing directions" do
 
   scenario "Viewing tickets for a given project" do
     click_link "Beer Bread"
-    expect(page).to have_content("1")
-    expect(page).to_not have_content("2")
-    click_link "1"
-    within("#direction h2") do
-      expect(page).to have_content("1")
-    end
     expect(page).to have_content("Preheat oven")
+    expect(page).to_not have_content("Fill in muffin tin")
+    click_link "Preheat oven"
+    within("#direction") do
+      expect(page).to have_content("Preheat oven")
+    end
   end
 end

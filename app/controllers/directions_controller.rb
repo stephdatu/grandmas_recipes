@@ -20,6 +20,19 @@ before_action :set_direction, only: [:show, :edit, :update, :destroy]
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @direction.update(direction_params)
+      flash[:notice] = "Direction has been updated."
+      redirect_to [@recipe, @direction]
+    else
+      flash[:alert] = "Direction has not been updated."
+      render action: "edit"
+    end
+  end
+
 private
   def set_recipe
     @recipe = Recipe.find(params[:recipe_id])
