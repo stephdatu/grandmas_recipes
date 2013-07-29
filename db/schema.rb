@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130729163919) do
+ActiveRecord::Schema.define(version: 20130729175413) do
+
+  create_table "directions", force: true do |t|
+    t.integer  "step_number"
+    t.text     "description"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "directions", ["recipe_id"], name: "index_directions_on_recipe_id"
 
   create_table "recipes", force: true do |t|
     t.string   "title"

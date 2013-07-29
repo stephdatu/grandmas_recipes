@@ -1,0 +1,25 @@
+<%= form_for [@recipe, @direction] do |f| %>
+  <% if @direction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@direction.errors.count, "error") %>
+              prohibited this direction from being saved:</h2>
+      <ul>
+      <% @direction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+   <%= f.label :step_number %><br>
+    <%= f.number_field :step_number %>
+  </p>
+
+  <p>
+   <%= f.label :description %><br>
+   <%= f.text_area :description %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
