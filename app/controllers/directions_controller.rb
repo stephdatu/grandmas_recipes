@@ -33,6 +33,13 @@ before_action :set_direction, only: [:show, :edit, :update, :destroy]
     end
   end
 
+  def destroy
+    @direction.destroy
+    flash[:notice] = "Direction has been deleted."
+
+    redirect_to @recipe
+  end
+
 private
   def set_recipe
     @recipe = Recipe.find(params[:recipe_id])

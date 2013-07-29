@@ -10,8 +10,7 @@
   <% @recipe.directions.each do |direction| %>
     <li>
       #<%= direction.step_number %>:
-      <%= simple_format(direction.description) %>
-      <%= link_to direction.description, [@recipe, direction] %>
+      <%= link_to simple_format(direction.description), [@recipe, direction] %>
     </li>
   <% end %>
 </ul>

@@ -2,4 +2,6 @@
   <h2><%= @direction.step_number %></h2>
   <%= simple_format(@direction.description) %>
   <%= link_to "Edit Direction", [:edit, @recipe, @direction] %>
+  <%= link_to "Delete Direction", [@recipe, @direction], method: :delete,
+      data: { confirm: "Are you sure you want to delete this direction?"} %>
 </div>
