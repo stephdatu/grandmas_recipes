@@ -13,7 +13,8 @@ class RecipesController < ApplicationController
       flash[:notice] = "Recipe has been created."
       redirect_to @recipe
     else
-      # nothing, yet
+      flash[:alert] = "Recipe has not been created."
+      render action: "new"
     end
   end
 
