@@ -5,3 +5,13 @@
     method: :delete,
     data: { confirm: "Are you sure you want to delete this recipe?" } %>
 <%= link_to "New Direction", new_recipe_direction_path(@recipe) %>
+
+<ul id='directions'>
+  <% @recipe.directions.each do |direction| %>
+    <li>
+      #<%= direction.step_number %>:
+      <%= link_to direction.step_number, [@recipe, direction] %>
+      <%= simple_format(direction.description) %>
+    </li>
+  <% end %>
+</ul>
