@@ -1,11 +1,20 @@
 require 'spec_helper'
 
 feature "Deleting recipes" do
-  scenario "Deleting a recipe" do
-    FactoryGirl.create(:recipe, title: "Beer Bread")
+  let!(:user) { Factory(:user) }
+  let!(:recipe) do
+  recipe = Factory(:recipe, title: "Beer Bread")
+    recipe.update_attribute(:user, user)
+    recipe
+  end
 
+  before do
+    sign_in_as!(user)
     visit '/'
     click_link "Beer Bread"
+  end
+
+  scenario "Deleting a recipe" do
     click_link "Delete Recipe"
 
     visit '/'

@@ -1,8 +1,15 @@
 require 'spec_helper'
 
 feature "Editing Recipes" do
+  let!(:user) { Factory(:user) }
+  let!(:recipe) do
+  recipe = Factory(:recipe, title: "Beer Bread")
+    recipe.update_attribute(:user, user)
+    recipe
+  end
+
   before do
-    FactoryGirl.create(:recipe, title: "Beer Bread")
+    sign_in_as!(user)
 
     visit '/'
     click_link "Beer Bread"

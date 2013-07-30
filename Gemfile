@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'pry-debugger'
 end
 
 group :test do

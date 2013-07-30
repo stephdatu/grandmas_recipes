@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+before_filter :authenticate_user!, :except => [:index, :show]
+
   def index
     @recipes = Recipe.all
   end
@@ -9,6 +11,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
 
     if @recipe.save
       flash[:notice] = "Recipe has been created."
@@ -49,6 +52,6 @@ class RecipesController < ApplicationController
 
 private
   def recipe_params
-    params.require(:recipe).permit(:title, :ingredients)
+    params.require(:recipe).permit(:title, :ingredients, users_attributes: [])
   end
 end
