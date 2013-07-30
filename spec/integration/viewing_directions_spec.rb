@@ -15,7 +15,7 @@ feature "Viewing directions" do
     visit '/'
   end
 
-  scenario "Viewing tickets for a given project" do
+  scenario "Viewing directions for a given project" do
     click_link "Beer Bread"
     expect(page).to have_content("Preheat oven")
     expect(page).to_not have_content("Fill in muffin tin")
