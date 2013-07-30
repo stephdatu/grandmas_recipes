@@ -1,28 +1,35 @@
-== README
+# Code Fellows App-A-Day: Grandma's Recipes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A microapplication to store and organize your favorite recipes!
 
-Things you may want to cover:
+As always, don't forget to run the following in your terminal prior to running the application:
+```
+$ rake db:migrate
+```
 
-* Ruby version
+![Homepage](/app/assets/gr-home.png "Homepage View")
 
-* System dependencies
+From the home page, you must first sign in. From there, you can click on the link 'New Recipe' to add a recipe.
 
-* Configuration
+![New Recipe](/app/assets/gr-newrecipe.png "New Recipe View")
 
-* Database creation
+At the 'New Recipe' page, include the name/title of your recipe, and the ingredients needed. Click 'Create Recipe' to save.
 
-* Database initialization
+![New Direction](/app/assets/gr-newdirection.png "New Direction View")
 
-* How to run the test suite
+Click 'New Direction' from there to add the steps for your recipe. Be sure to include the step number and details instructions. Click 'Create Direction' to save your direction.
 
-* Services (job queues, cache servers, search engines, etc.)
+![Recipe](/app/assets/gr-recipelist.png "Recipe View")
 
-* Deployment instructions
+Your recipe will be shown as above. You can select 'Back to All Recipes' to see your total collection.
 
-* ...
+![List of Recipes](/app/assets/gr-addedrecipes.png "List of All Recipes View")
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### References
+This application has been brought to you by:
+* Rails4
+* RSpec
+* Capybara
+* Devise
+* Nested Resources
+* Has Many/Belongs To Associations
