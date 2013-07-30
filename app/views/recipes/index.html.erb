@@ -1,6 +1,8 @@
 <%= link_to "New Recipe", new_recipe_path %>
-
-<h2>Recipes</h2>
+<br><br>
+<h2>Grandma's Recipes</h2>
+<p>Your source for all of your favorite recipes!</p>
+<br><br>
 <ul>
   <% @recipes.each do |recipe| %>
     <li><%= link_to recipe.title, recipe %></li>
