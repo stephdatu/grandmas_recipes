@@ -33,3 +33,7 @@ This application has been brought to you by:
 * Devise
 * Nested Resources
 * Has Many/Belongs To Associations
+
+### License
+
+http://stephdatu.mit-license.org/
